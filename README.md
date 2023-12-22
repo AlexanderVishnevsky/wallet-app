@@ -17,6 +17,19 @@
 -  Due to security reasons 12-word mnemonic phrase & private key stored on Rust-side
 -  User-friendly interface, intuitive, and visually appealing
 
+## ⚡ How To run
+Make sure that [Node.js installed](https://nodejs.org/en) on your computer.
+Open terminal & execute next command:
+```
+npm i
+tauri dev
+```
+App will open automatically after building
+Or you can open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
+
+After launching app you can create a new wallet. Just add username & password. And app will generate secured 12-word mnemonic phrase for you. <b>It's very important to save this phrase because if you lose it you’ll not be able to access your wallet.</b> 
+When your wallet has been created you will see your Ethereum balance. You can refresh it manually but not more than once a minute. Walled ID, Private key, Secure phrase will available through the user menu.
+
 ## ⚡ Available Scripts
 
 In the project directory, you can run:
@@ -60,10 +73,3 @@ In the project directory, you can run:
 -   [ ] Transfer between accounts
 -   [ ] Add wallet import
 -   [ ] Add multi wallets
-
-## 📃 Technical Info
-
--   <a href="https://nextjs.org/">NextJS static template</a> as main engine ⚙️‍
--   <a href="https://www.typescriptlang.org/"> Typescript</a> for code writing 🖤
--   <a href="https://eslint.org/">Eslint</a> & <a href="https://prettier.io/">Prettier</a> for code styling 🖌️
--   <a href="https://mui.com/">MUI</a> for styling (powered by <a href="https://emotion.sh/docs/introduction">Emotion</a>) 💅
