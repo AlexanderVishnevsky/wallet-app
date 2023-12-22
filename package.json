@@ -1,10 +1,10 @@
 {
   "name": "interexy-wallet-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
-    "tauri-dev": "pnpm run tauri-dev",
-    "tauri-build": "pnpm run tauri-build",
+    "tauri-dev": "tauri dev",
+    "tauri-build": "tauri build",
     "lint": "tsc --build --clean && eslint --ext .ts,.tsx ./ --quiet --fix",
     "dev": "next dev",
     "build": "next build",

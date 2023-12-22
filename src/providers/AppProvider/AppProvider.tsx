@@ -31,7 +31,7 @@ export const useAppStore = create<AppState & AppAction>((set) => ({
         const currentDate = new Date();
         const currentHours = currentDate.getHours();
         const currentMinutes = currentDate.getMinutes();
-        const currentTime = `${currentHours}:${currentMinutes}`;
+        const currentTime = `${currentHours}:${currentMinutes < 10 ? `0` + currentMinutes : currentMinutes}`;
 
         const currentDay = currentDate.getDate();
         const currentMonth = currentDate.getMonth() + 1; // Months are zero-based, so we add 1
