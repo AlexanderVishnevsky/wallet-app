@@ -34,6 +34,7 @@
       "@hooks": ["src/hooks/index"]
     }
   },
-  "include": ["next-env.d.ts","src/utils/MUI/breakpointOverrides.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["src", "src/utils/MUI/breakpointOverrides.d.ts", "**/*.ts", "**/*.tsx"],
+  "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules", "src-tauri"]
 }
