@@ -16,7 +16,7 @@ export const getPublicKey = async (mnemonic: string): Promise<NUL<string>> => {
 
 export const getEthBalance = async (): Promise<{ balance: NUL<string>; publicKey: NUL<string> }> => {
     try {
-        const provider = new ethers.JsonRpcProvider(process.env.NEXT_PUBLIC_ETH_URL);
+        const provider = new ethers.JsonRpcProvider(import.meta.env.VITE_APP_ETH_URL);
         const mnemonic = await getSecurePhrase();
         const publicKey = await getPublicKey(mnemonic);
         const balance = await provider.getBalance(publicKey ?? '');

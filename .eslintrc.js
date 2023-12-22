@@ -1,7 +1,7 @@
 /** react-app config already use "@typescript-eslint" for "*.ts(x)" files */
 
 module.exports = {
-    extends: ['react-app', 'prettier', 'plugin:@next/next/recommended'],
+    extends: ['react-app', 'prettier'],
     plugins: ['prettier', 'unused-imports'],
     env: {
         browser: true,
@@ -11,6 +11,7 @@ module.exports = {
     parserOptions: {
         warnOnUnsupportedTypeScriptVersion: false,
     },
+    ignorePatterns: ['dist', 'src-tauri/*'],
     rules: {
         'prettier/prettier': 'error',
         'import/prefer-default-export': 'off',
@@ -18,26 +19,16 @@ module.exports = {
         'unused-imports/no-unused-imports': 'warn',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'off',
-        '@next/next/no-img-element': 'off',
         '@typescript-eslint/ban-ts-comment': 'error',
         'unused-imports/no-unused-vars': [
             'warn',
             { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
         ],
+
         'import/order': [
             'error',
             {
                 pathGroups: [
-                    {
-                        pattern: 'next/**',
-                        group: 'external',
-                        position: 'before',
-                    },
-                    {
-                        pattern: 'next',
-                        group: 'external',
-                        position: 'before',
-                    },
                     {
                         pattern: 'react',
                         group: 'external',

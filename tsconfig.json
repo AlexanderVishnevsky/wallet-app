@@ -24,11 +24,7 @@
     "incremental": true,
     "paths": {
       "@/*": ["src/*"],
-      "@ui/*": ["components/*"],
-      "public/*": ["public/*"],
-      "@media/*": ["public/static/*"],
-      "@icons/*": ["public/static/icons/*"],
-      "@images/*": ["public/static/images/*"],
+      "@ui/*": ["src/components/*"],
       "@typings/*": ["src/typings/*"],
       "@theme": ["src/config/theme"],
       "@hooks": ["src/hooks/index"]
@@ -36,5 +32,5 @@
   },
   "include": ["src", "src/utils/MUI/breakpointOverrides.d.ts", "**/*.ts", "**/*.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }],
-  "exclude": ["node_modules", "src-tauri"]
+  "exclude": ["node_modules", "src-tauri", "dist"]
 }

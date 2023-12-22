@@ -1,8 +1,8 @@
 import { PaletteMode, Theme } from '@mui/material';
 import { TypographyVariants } from '@mui/material/styles';
+import { enUS } from '@mui/material/locale';
 
-import { defaultZIndex } from '@/utils/MUI/themeOverrides';
-import { AvenirNextFont } from '@/config/localFonts';
+import { createCustomTheme, defaultZIndex } from '@/utils/MUI/themeOverrides';
 
 export const LIGHT_COLORS = {};
 
@@ -18,9 +18,7 @@ export const DARK_COLORS = {
 const commonThemeSettings: Pick<Theme, 'direction' | 'zIndex' | 'typography' | 'components'> = {
     direction: 'ltr',
     zIndex: defaultZIndex,
-    typography: {
-        fontFamily: AvenirNextFont.style.fontFamily,
-    } as TypographyVariants,
+    typography: {} as TypographyVariants,
     components: {
         MuiIconButton: {
             defaultProps: {
@@ -74,7 +72,6 @@ const commonDarkThemeSettings: Pick<Theme, 'direction' | 'components' | 'typogra
                 contained: {
                     borderRadius: '4px',
                     padding: '12px 24px',
-                    fontFamily: AvenirNextFont.style.fontFamily,
                     textTransform: 'capitalize',
                     fontStyle: 'normal',
                     fontWeight: 500,
@@ -94,7 +91,6 @@ const commonDarkThemeSettings: Pick<Theme, 'direction' | 'components' | 'typogra
                 },
                 text: {
                     padding: '10px',
-                    fontFamily: AvenirNextFont.style.fontFamily,
                     textTransform: 'capitalize',
                     fontStyle: 'normal',
                     fontWeight: 500,
@@ -135,4 +131,9 @@ const getPaletteTokens = (mode: PaletteMode) => ({
     },
 });
 
-export { commonThemeSettings, commonDarkThemeSettings, getPaletteTokens };
+const theme: Theme = createCustomTheme(getPaletteTokens('dark'), {
+    enUS,
+    ...commonDarkThemeSettings,
+});
+
+export { commonThemeSettings, commonDarkThemeSettings, getPaletteTokens, theme };
